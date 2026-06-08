@@ -8,6 +8,7 @@
     background-color: rgba(0, 242, 254, 0.45) !important;
     box-shadow: 0 0 30px rgba(0, 242, 254, 0.6) !important;
 }
+
 /* --- RESET & VARIABLES --- */
 * {
     margin: 0;
@@ -113,7 +114,7 @@ nav ul li a:hover {
 /* Responsive Navbar adjustments */
 @media (max-width: 768px) {
     nav {
-        display: none; 
+        display: none;
     }
 }
 
@@ -142,7 +143,7 @@ nav ul li a:hover {
 }
 
 .hero h1 {
-    font-size: clamp(36px, 5vw, 56px); 
+    font-size: clamp(36px, 5vw, 56px);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 10px;
@@ -167,8 +168,15 @@ nav ul li a:hover {
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero p {
@@ -232,7 +240,7 @@ nav ul li a:hover {
     width: 110%;
     height: 110%;
     transform: translate(-50%, -50%);
-    background: repeating-radial-gradient(circle, transparent, transparent 8px, rgba(255,255,255,0.04) 9px, rgba(255,255,255,0.04) 10px);
+    background: repeating-radial-gradient(circle, transparent, transparent 8px, rgba(255, 255, 255, 0.04) 9px, rgba(255, 255, 255, 0.04) 10px);
     z-index: 1;
     border-radius: 50%;
 }
@@ -251,28 +259,32 @@ nav ul li a:hover {
         padding-top: 140px;
         padding-bottom: 60px;
     }
+
     .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 50px;
     }
+
     .hero p {
         margin: 0 auto 35px auto;
     }
+
     .hero-action {
         justify-content: center;
     }
+
     .hero-image-wrapper {
         justify-content: center;
-        order: -1; 
+        order: -1;
     }
 }
 
 /* --- LOGO SLIDER SECTION --- */
 .logos-section {
     padding: 40px 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     background: rgba(3, 14, 33, 0.5);
 }
 
@@ -385,7 +397,7 @@ nav ul li a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin-bottom: 35px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 25px;
 }
 
@@ -407,11 +419,13 @@ nav ul li a:hover {
     .about {
         padding: 60px 0;
     }
+
     .about-grid {
         grid-template-columns: 1fr;
         gap: 50px;
         text-align: center;
     }
+
     .stats-grid {
         max-width: 500px;
         margin: 0 auto 35px auto;
@@ -429,7 +443,9 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
-    .projects-header { text-align: center; }
+    .projects-header {
+        text-align: center;
+    }
 }
 
 .projects-header .section-tag {
@@ -487,7 +503,7 @@ nav ul li a:hover {
     object-fit: cover;
     object-position: top center;
     border-radius: 12px 12px 0 0;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .project-info {
@@ -541,7 +557,7 @@ nav ul li a:hover {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -554,10 +570,11 @@ nav ul li a:hover {
 
 /* Mobile & Tablet Overrides for Grid to slider transition */
 @media (max-width: 992px) {
-    .projects-grid { 
-        grid-template-columns: repeat(3, 100%); 
+    .projects-grid {
+        grid-template-columns: repeat(3, 100%);
         gap: 0;
     }
+
     .project-card {
         margin: 0 15px;
     }

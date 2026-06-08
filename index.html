@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
     <!-- Bootstrap Icons (Kept for interface iconography) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- AOS CSS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-dark: #070a13;
@@ -58,15 +60,42 @@
             z-index: -2;
             pointer-events: none;
         }
-        .blob-1 { top: 10%; right: -10%; background: radial-gradient(circle, rgba(155, 81, 224, 0.08) 0%, transparent 70%); }
-        .blob-2 { top: 45%; left: -15%; background: radial-gradient(circle, rgba(0, 242, 254, 0.06) 0%, transparent 70%); }
-        .blob-3 { bottom: 5%; right: -10%; background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%); }
+
+        .blob-1 {
+            top: 10%;
+            right: -10%;
+            background: radial-gradient(circle, rgba(155, 81, 224, 0.08) 0%, transparent 70%);
+        }
+
+        .blob-2 {
+            top: 45%;
+            left: -15%;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.06) 0%, transparent 70%);
+        }
+
+        .blob-3 {
+            bottom: 5%;
+            right: -10%;
+            background: radial-gradient(circle, rgba(79, 172, 254, 0.08) 0%, transparent 70%);
+        }
 
         /* Smooth Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: #1b263b; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--accent-neon); }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1b263b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-neon);
+        }
 
         /* Custom Header Navbar Structure */
         .navbar {
@@ -82,21 +111,25 @@
             transition: all 0.4s ease;
             padding: 20px 0;
         }
+
         .navbar.scrolled {
             background: rgba(7, 10, 19, 0.95);
             padding: 12px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
+
         .navbar .custom-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
+
         .brand-group {
             display: flex;
             align-items: center;
             gap: 16px;
         }
+
         .navbar-brand {
             color: #ffffff;
             text-decoration: none;
@@ -104,11 +137,13 @@
             letter-spacing: 3px;
             font-size: 1.1rem;
         }
+
         .brand-divider {
             width: 1px;
             height: 16px;
             background: rgba(255, 255, 255, 0.15);
         }
+
         .brand-subtext {
             text-transform: uppercase;
             color: var(--text-muted);
@@ -133,6 +168,7 @@
             list-style: none;
             gap: 4px;
         }
+
         .nav-link {
             text-decoration: none;
             display: block;
@@ -146,15 +182,18 @@
             position: relative;
             padding-top: 120px;
         }
+
         .hero-grid {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
             gap: 48px;
             align-items: center;
         }
+
         .hero-left {
             text-align: left;
         }
+
         .hero-right {
             text-align: center;
         }
@@ -167,16 +206,18 @@
             margin-bottom: 24px;
             font-size: 0.85rem;
             font-weight: 600;
-            background: rgba(0, 242, 254, 0.08); 
-            color: var(--accent-neon); 
+            background: rgba(0, 242, 254, 0.08);
+            color: var(--accent-neon);
             border: 1px solid rgba(0, 242, 254, 0.15);
         }
+
         .hero-title {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 24px;
             line-height: 1.2;
         }
+
         .hero-lead {
             font-size: 1.25rem;
             margin-bottom: 32px;
@@ -184,24 +225,34 @@
             max-width: 550px;
             line-height: 1.6;
         }
+
         .btn-group {
             display: flex;
             gap: 16px;
         }
 
-       .gradient-text {
-    background: linear-gradient(135deg, var(--accent-neon), var(--accent-blue), var(--accent-purple));
-    -webkit-background-clip: text;
-    background-clip: text; /* Add this line to clear the warning */
-    -webkit-text-fill-color: transparent;
-    background-size: 200% auto;
-    animation: textShine 4s linear infinite;
-}
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-neon), var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* Add this line to clear the warning */
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textShine 4s linear infinite;
+        }
 
         @keyframes textShine {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Premium Buttons CSS */
@@ -216,6 +267,7 @@
             border-radius: 12px;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+
         .btn-gradient {
             background: linear-gradient(135deg, var(--accent-neon), var(--accent-blue));
             color: #000;
@@ -224,17 +276,25 @@
             position: relative;
             z-index: 1;
         }
+
         .btn-gradient::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             border-radius: 12px;
             opacity: 0;
             z-index: -1;
             transition: opacity 0.4s ease;
         }
-        .btn-gradient:hover::before { opacity: 1; }
+
+        .btn-gradient:hover::before {
+            opacity: 1;
+        }
+
         .btn-gradient:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 24px rgba(0, 242, 254, 0.3);
@@ -247,6 +307,7 @@
             font-weight: 600;
             background: transparent;
         }
+
         .btn-outline-custom:hover {
             border-color: var(--accent-neon);
             color: var(--accent-neon);
@@ -260,9 +321,18 @@
             height: auto;
             display: block;
         }
-        .rounded-4 { border-radius: 24px; }
-        .object-fit-cover { object-fit: cover; }
-        .shadow-lg { box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+        .rounded-4 {
+            border-radius: 24px;
+        }
+
+        .object-fit-cover {
+            object-fit: cover;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
 
         /* Creative Image Float Frame */
         .image-frame-wrapper {
@@ -270,9 +340,13 @@
             display: inline-block;
             animation: floatImage 6s ease-in-out infinite;
         }
+
         .back-glow {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             transform: rotate(-6deg);
             z-index: -1;
             min-width: 320px;
@@ -284,9 +358,17 @@
         }
 
         @keyframes floatImage {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         /* Native Grid Rules for About Layout Section */
@@ -306,6 +388,7 @@
             padding: 40px;
             transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
+
         .custom-card:hover {
             transform: translateY(-10px) scale(1.02);
             border-color: rgba(0, 242, 254, 0.25);
@@ -319,6 +402,7 @@
             align-items: start;
             margin-bottom: 24px;
         }
+
         .meta-badge {
             display: flex;
             align-items: center;
@@ -328,12 +412,14 @@
             background: rgba(0, 242, 254, 0.08);
             border: 1px solid rgba(0, 242, 254, 0.15);
         }
+
         .meta-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
             background-color: #00f2fe;
         }
+
         .meta-badge span.text {
             font-size: 0.75rem;
             color: #00f2fe;
@@ -346,33 +432,53 @@
             gap: 16px;
             margin-top: 24px;
         }
+
         .stat-box {
             padding: 16px;
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.01);
             border: 1px solid rgba(255, 255, 255, 0.03);
         }
-        .stat-box h4 { font-size: 1.75rem; font-weight: 800; margin-bottom: 4px;}
-        .stat-box small { color: #8492a6; font-size: 0.8rem; }
+
+        .stat-box h4 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .stat-box small {
+            color: #8492a6;
+            font-size: 0.8rem;
+        }
 
         /* Modern Native Progress Bar Ecosystem Component */
-        .progress-wrapper { margin-bottom: 24px; }
+        .progress-wrapper {
+            margin-bottom: 24px;
+        }
+
         .progress-labels {
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
             font-size: 0.9rem;
         }
-        .progress-labels i { margin-right: 8px; color: var(--accent-blue); }
+
+        .progress-labels i {
+            margin-right: 8px;
+            color: var(--accent-blue);
+        }
+
         .progress-container {
             height: 6px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 4px;
             overflow: hidden;
         }
+
         .progress-bar {
             height: 100%;
-            width: 0%; /* Populated dynamically via JS layout listener */
+            width: 0%;
+            /* Populated dynamically via JS layout listener */
             background: linear-gradient(90deg, #00f2fe, #4facfe);
         }
 
@@ -384,6 +490,7 @@
             margin-bottom: 48px;
             gap: 24px;
         }
+
         .views-badge {
             background: #070a13;
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -393,7 +500,11 @@
             font-size: 0.85rem;
             font-weight: 600;
         }
-        .views-badge i { color: #ffc107; margin-right: 4px;}
+
+        .views-badge i {
+            color: #ffc107;
+            margin-right: 4px;
+        }
 
         .reels-grid {
             display: grid;
@@ -401,26 +512,35 @@
             gap: 24px;
             justify-content: center;
         }
+
         .video-container {
             position: relative;
             overflow: hidden;
             aspect-ratio: 9/16;
             width: 100%;
         }
+
         .video-container iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
+
         .video-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(7, 10, 19, 0.4);
             pointer-events: none;
             transition: background 0.3s ease;
             z-index: 1;
         }
-        .custom-card:hover .video-overlay { background: rgba(7, 10, 19, 0); }
+
+        .custom-card:hover .video-overlay {
+            background: rgba(7, 10, 19, 0);
+        }
 
         /* Widescreen Showreel Grid Block Layout */
         .showreel-grid {
@@ -428,21 +548,34 @@
             grid-template-columns: 1.4fr 1fr;
             gap: 24px;
         }
-        .showreel-left {
+
+        /* Ensure the parent container controls the size and aspect ratio */
+        .custom-card-video {
             position: relative;
+            width: 100%;
+            max-width: 1920px;
+            /* Limits maximum size on massive screens */
+            aspect-ratio: 16 / 9;
+            /* Forces the perfect YouTube shape */
             overflow: hidden;
-            border-radius: 16px;
         }
-        .showreel-left iframe {
+
+        /* Force the iframe to perfectly fill the container */
+        .custom-card-video iframe {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border: none;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
+
         .showreel-right {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
+
         .showreel-card {
             position: relative;
             overflow: hidden;
@@ -450,19 +583,24 @@
             flex-grow: 1;
             min-height: 180px;
         }
+
         .showreel-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             position: absolute;
-            top: 0; left: 0;
+            top: 0;
+            left: 0;
         }
+
         .showreel-card-caption {
             position: absolute;
-            bottom: 0; left: 0; width: 100%;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             padding: 16px;
             color: #fff;
-            background: linear-gradient(0deg, rgba(7,10,19,0.95), transparent);
+            background: linear-gradient(0deg, rgba(7, 10, 19, 0.95), transparent);
             z-index: 2;
         }
 
@@ -471,19 +609,23 @@
             margin: 0 auto;
             max-width: 600px;
         }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
             margin-bottom: 16px;
         }
+
         .form-group-full {
             margin-bottom: 24px;
         }
+
         .form-group-full.button-margin {
             margin-top: 32px;
             margin-bottom: 0;
         }
+
         .form-label {
             display: block;
             margin-bottom: 8px;
@@ -491,6 +633,7 @@
             font-weight: 700;
             color: rgba(255, 255, 255, 0.5);
         }
+
         .form-glass {
             width: 100%;
             background: rgba(255, 255, 255, 0.02);
@@ -503,21 +646,45 @@
             outline: none;
             transition: all 0.3s ease;
         }
+
         .form-glass:focus {
             background: rgba(255, 255, 255, 0.04);
             border-color: var(--accent-neon);
             box-shadow: 0 0 15px rgba(0, 242, 254, 0.15);
         }
-        .w-100 { width: 100%; }
 
-        section { padding: 120px 0; position: relative; }
-        .text-center { text-align: center; }
-        .mb-5 { margin-bottom: 48px; }
+        .w-100 {
+            width: 100%;
+        }
+
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-5 {
+            margin-bottom: 48px;
+        }
 
         @keyframes pulseGlow {
-            0% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(2.4); opacity: 0; }
-            100% { transform: scale(1); opacity: 0; }
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
         }
 
         /* Technical Links styling */
@@ -531,16 +698,25 @@
             position: relative;
             transition: color 0.25s ease;
         }
-        .split-minimal-link:hover { color: #fff !important; }
+
+        .split-minimal-link:hover {
+            color: #fff !important;
+        }
+
         .split-minimal-link::before {
             content: '';
             position: absolute;
-            width: 0; height: 1px;
+            width: 0;
+            height: 1px;
             background: var(--accent-neon);
-            top: 52%; left: 14px;
+            top: 52%;
+            left: 14px;
             transition: width 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .split-minimal-link:hover::before { width: calc(100% - 28px); }
+
+        .split-minimal-link:hover::before {
+            width: calc(100% - 28px);
+        }
 
         .border-action-btn {
             color: #fff !important;
@@ -552,6 +728,7 @@
             padding: 8px 16px;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .border-action-btn:hover {
             color: #000 !important;
             background: var(--accent-neon);
@@ -567,6 +744,7 @@
             gap: 16px;
             margin-bottom: 48px;
         }
+
         .social-link-card {
             width: 100%;
             max-width: 270px;
@@ -577,9 +755,10 @@
             padding: 16px;
             border-radius: 12px;
             background: #0f1626;
-            border: 1px solid rgba(255,255,255,0.02);
+            border: 1px solid rgba(255, 255, 255, 0.02);
             transition: all 0.3s;
         }
+
         .social-icon-box {
             display: flex;
             align-items: center;
@@ -588,16 +767,31 @@
             width: 40px;
             height: 40px;
         }
-        .social-meta h6 { color: #ffffff; font-size: 0.85rem; font-weight: 600; margin-top: 2px;}
-        .social-meta small { text-transform: uppercase; display: block; color: var(--text-muted); font-size: 0.6rem; font-weight: 700; }
+
+        .social-meta h6 {
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .social-meta small {
+            text-transform: uppercase;
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.6rem;
+            font-weight: 700;
+        }
 
         /* RESPONSIVE MEDIA QUERIES (Pure CSS Replacement for Bootstrap Grid Breakpoints) */
         @media (max-width: 991.98px) {
             .navbar-toggler {
                 display: block;
             }
+
             .navbar-collapse {
-                display: none; /* Controlled dynamically by JavaScript logic state */
+                display: none;
+                /* Controlled dynamically by JavaScript logic state */
                 width: 100%;
                 background: #0f1626;
                 margin-top: 15px;
@@ -605,12 +799,15 @@
                 border-radius: 16px;
                 border: 1px solid rgba(255, 255, 255, 0.05);
             }
+
             .navbar-collapse.open {
                 display: block;
             }
+
             .navbar .custom-container {
                 flex-wrap: wrap;
             }
+
             .navbar-nav {
                 flex-direction: column;
                 width: 100%;
@@ -618,153 +815,255 @@
                 gap: 12px;
                 padding-top: 16px;
             }
+
             .split-minimal-link {
                 padding: 10px 0 !important;
             }
-            .split-minimal-link::before { display: none; }
-            .border-action-btn { display: block; text-align: center; width: 100%; padding: 12px !important; }
+
+            .split-minimal-link::before {
+                display: none;
+            }
+
+            .border-action-btn {
+                display: block;
+                text-align: center;
+                width: 100%;
+                padding: 12px !important;
+            }
 
             /* Grid downscales */
-            .hero-grid, .about-grid, .showreel-grid {
+            .hero-grid,
+            .about-grid,
+            .showreel-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .hero-left { text-align: center; }
-            .btn-group { justify-content: center; }
+
+            .hero-left {
+                text-align: center;
+            }
+
+            .btn-group {
+                justify-content: center;
+            }
+
             .reels-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 575.98px) {
-            .brand-divider, .brand-subtext {
+
+            .brand-divider,
+            .brand-subtext {
                 display: none;
             }
-            .hero-title { font-size: 2.5rem; }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
             .reels-top-flex {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 16px;
             }
+
             .reels-grid {
                 grid-template-columns: 1fr;
             }
+
             .form-row {
                 grid-template-columns: 1fr;
             }
+
             /* EXTRA RESPONSIVE FIXES */
 
-@media (max-width: 768px) {
+            @media (max-width: 768px) {
 
-    .custom-container {
-        padding: 0 16px;
-    }
+                .custom-container {
+                    padding: 0 16px;
+                }
 
-    section {
-        padding: 80px 0;
-    }
+                section {
+                    padding: 80px 0;
+                }
 
-    .hero-section {
-        min-height: auto;
-        padding-top: 120px;
-        padding-bottom: 60px;
-    }
+                .hero-section {
+                    min-height: auto;
+                    padding-top: 120px;
+                    padding-bottom: 60px;
+                }
 
-    .hero-title {
-        font-size: 2.2rem;
-        line-height: 1.3;
-    }
+                .hero-title {
+                    font-size: 2.2rem;
+                    line-height: 1.3;
+                }
 
-    .hero-lead {
-        font-size: 1rem;
-        max-width: 100%;
-    }
+                .hero-lead {
+                    font-size: 1rem;
+                    max-width: 100%;
+                }
 
-    .btn-group {
-        flex-direction: column;
-        width: 100%;
-    }
+                .btn-group {
+                    flex-direction: column;
+                    width: 100%;
+                }
 
-    .btn-group .btn {
-        width: 100%;
-    }
+                .btn-group .btn {
+                    width: 100%;
+                }
 
-    .image-frame-wrapper img {
-        width: 260px !important;
-        height: 260px !important;
-    }
+                .image-frame-wrapper img {
+                    width: 260px !important;
+                    height: 260px !important;
+                }
 
-    .back-glow {
-        min-width: 260px;
-        min-height: 260px;
-    }
+                .back-glow {
+                    min-width: 260px;
+                    min-height: 260px;
+                }
 
-    .custom-card {
-        padding: 24px;
-    }
+                .custom-card {
+                    padding: 24px;
+                }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
+                .stats-grid {
+                    grid-template-columns: 1fr;
+                }
 
-    .showreel-left {
-        min-height: 250px !important;
-    }
+                .showreel-left {
+                    min-height: 250px !important;
+                }
 
-    .showreel-card {
-        min-height: 220px;
-    }
+                .showreel-card {
+                    min-height: 220px;
+                }
 
-    .social-link-card {
-        max-width: 100%;
-    }
+                .social-link-card {
+                    max-width: 100%;
+                }
 
-    h2 {
-        font-size: 1.8rem !important;
-    }
+                h2 {
+                    font-size: 1.8rem !important;
+                }
 
-    h3 {
-        font-size: 1.5rem !important;
-    }
-}
+                h3 {
+                    font-size: 1.5rem !important;
+                }
+            }
 
-@media (max-width: 480px) {
+            @media (max-width: 480px) {
 
-    .hero-title {
-        font-size: 1.9rem;
-    }
+                .hero-title {
+                    font-size: 1.9rem;
+                }
 
-    .navbar-brand {
-        font-size: 0.95rem;
-        letter-spacing: 2px;
-    }
+                .navbar-brand {
+                    font-size: 0.95rem;
+                    letter-spacing: 2px;
+                }
 
-    .custom-badge,
-    .views-badge {
-        font-size: 0.75rem;
-    }
+                .custom-badge,
+                .views-badge {
+                    font-size: 0.75rem;
+                }
 
-    .image-frame-wrapper img {
-        width: 220px !important;
-        height: 220px !important;
-    }
+                .image-frame-wrapper img {
+                    width: 220px !important;
+                    height: 220px !important;
+                }
 
-    .back-glow {
-        min-width: 220px;
-        min-height: 220px;
-    }
+                .back-glow {
+                    min-width: 220px;
+                    min-height: 220px;
+                }
 
-    .custom-card {
-        padding: 20px;
-    }
+                .custom-card {
+                    padding: 20px;
+                }
 
-    .stat-box h4 {
-        font-size: 1.4rem;
-    }
-}
+                .stat-box h4 {
+                    font-size: 1.4rem;
+                }
+            }
         }
+
+        /* 1. Force the wrapper to act as the strict bounding box */
+        #videoWrapper {
+            position: relative !important;
+            overflow: hidden;
+            /* If it's a 16:9 video, you can give it an aspect ratio so it scales beautifully */
+            aspect-ratio: 16 / 9;
+        }
+
+        /* 2. Make the iframe fill the wrapper perfectly */
+        #videoIframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+            z-index: 1;
+        }
+
+        /* 3. FIX THE COVER PHOTO: Force it to cover everything without stretching */
+        .video-poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            /* CRUCIAL FIXES FOR THE IMAGE */
+            background-size: cover;
+            /* Forces image to fill the space without warping */
+            background-position: center;
+            /* Centers the image frame */
+            background-repeat: no-repeat;
+            /* Prevents tiling if the container is large */
+
+            cursor: pointer;
+            z-index: 10;
+            /* Places it firmly on top of the iframe */
+
+            /* Centers your play button */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* Smooth fading effect */
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        /* 4. Style the play button to look professional */
+        .play-button {
+            font-size: 2.5rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, background 0.2s ease;
+
+            /* Fix minor visual centering for the unicode play arrow */
+            padding-left: 5px;
+        }
+
+        .video-poster:hover .play-button {
+            transform: scale(1.1);
+            background: #ff0000;
+            /* YouTube Red on hover */
+        }
+        
     </style>
 </head>
+
 <body>
 
     <!-- Ambient Glow Fields -->
@@ -781,11 +1080,11 @@
                 <div class="brand-divider"></div>
                 <span class="brand-subtext">SK / 2026</span>
             </div>
-            
+
             <button class="navbar-toggler" type="button" id="menuToggle">
                 <i class="bi bi-list"></i>
             </button>
-            
+
             <div class="navbar-collapse" id="navbarSplit">
                 <ul class="navbar-nav">
                     <li><a class="nav-link split-minimal-link" href="#hero">Home</a></li>
@@ -805,10 +1104,13 @@
             <div class="hero-grid">
                 <div class="hero-left" data-aos="fade-right" data-aos-duration="1200">
                     <span class="custom-badge">Minimal Cuts, Maximum Impact</span>
-                    <h1 class="hero-title">The Content Creator <br><span class="gradient-text" id="typed-text">Video Editing.</span></h1>
+                    <h1 class="hero-title">The Content Creator <br><span class="gradient-text" id="typed-text">Video
+                            Editing.</span></h1>
                     <p class="hero-lead">
-"Hello, I am Suresh Kumar, an aspiring video editor specializing in creating engaging and professional video content. I have hands-on experience editing social media reels, YouTube Shorts, promotional videos, and narrative storytelling."
-</p>
+                        "Hello, I am Suresh Kumar, an aspiring video editor specializing in creating engaging and
+                        professional video content. I have hands-on experience editing social media reels, YouTube
+                        Shorts, promotional videos, and narrative storytelling."
+                    </p>
                     <div class="btn-group">
                         <a href="#showreel" class="btn btn-gradient">Watch Show Reel</a>
                         <a href="#contact" class="btn btn-outline-custom">Let's Connect</a>
@@ -817,7 +1119,9 @@
                 <div class="hero-right" data-aos="zoom-in-up" data-aos-duration="1400">
                     <div class="image-frame-wrapper">
                         <div class="back-glow"></div>
-                        <img src="./WhatsApp Image 2026-06-06 at 10.09.34 PM.jpeg" alt="Official Creator Portrait" class="img-fluid rounded-4 object-fit-cover shadow-lg" style="width: 320px; height: 320px; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="./WhatsApp Image 2026-06-06 at 10.09.34 PM.jpeg" alt="Official Creator Portrait"
+                            class="img-fluid rounded-4 object-fit-cover shadow-lg"
+                            style="width: 320px; height: 320px; border: 1px solid rgba(255,255,255,0.1);">
                     </div>
                 </div>
             </div>
@@ -831,8 +1135,11 @@
                     <div class="custom-card">
                         <div class="card-header-flex">
                             <div>
-                                <span style="color: #00f2fe; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; font-size: 0.85rem;">Bio Profile</span>
-                                <h2 class="fw-bold text-white mt-1 mb-0" style="font-size: 2.25rem; margin-top: 4px;">Behind The Timeline</h2>
+                                <span
+                                    style="color: #00f2fe; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; font-size: 0.85rem;">Bio
+                                    Profile</span>
+                                <h2 class="fw-bold text-white mt-1 mb-0" style="font-size: 2.25rem; margin-top: 4px;">
+                                    Behind The Timeline</h2>
                             </div>
                             <div class="meta-badge">
                                 <div class="meta-dot"></div>
@@ -840,11 +1147,14 @@
                             </div>
                         </div>
                         <p style="color: #8492a6; line-height: 1.8; font-size: 0.95rem;">
-                            I am a passionate Video Editor and Digital Content Creator dedicated to visual storytelling. With deep expertise in tools like Premier Pro and Adobe After Effects, I specialize in taking complex concepts and shaping them into engaging, high-impact videos.
+                            I am a passionate Video Editor and Digital Content Creator dedicated to visual storytelling.
+                            With deep expertise in tools like Premier Pro and Adobe After Effects, I specialize in
+                            taking complex concepts and shaping them into engaging, high-impact videos.
 
- From rhythmic pacing to cinematic styling, I craft content that doesn't just look good—it keeps viewers hooked from the first frame to the last.
+                            From rhythmic pacing to cinematic styling, I craft content that doesn't just look good—it
+                            keeps viewers hooked from the first frame to the last.
 
-Let’s bring your vision to life.
+                            Let’s bring your vision to life.
                         </p>
                         <div class="stats-grid">
                             <div class="stat-box">
@@ -860,9 +1170,12 @@ Let’s bring your vision to life.
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <span style="color: #4facfe; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; font-size: 0.85rem;">Editing Suite</span>
-                    <h3 class="fw-bold text-white mt-1 mb-4" style="font-size: 1.75rem; margin-top: 4px; margin-bottom: 24px;">Software Eco System...</h3>
-                    
+                    <span
+                        style="color: #4facfe; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; font-size: 0.85rem;">Editing
+                        Suite</span>
+                    <h3 class="fw-bold text-white mt-1 mb-4"
+                        style="font-size: 1.75rem; margin-top: 4px; margin-bottom: 24px;">Software Eco System...</h3>
+
                     <div class="progress-wrapper">
                         <div class="progress-labels">
                             <span><i class="bi bi-camera-reels-fill"></i> Adobe Premiere Pro (PR)</span>
@@ -901,29 +1214,47 @@ Let’s bring your vision to life.
         <div class="custom-container">
             <div class="reels-top-flex" data-aos="fade-down" data-aos-duration="1000">
                 <div>
-                    <span style="color: #00f2fe; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; font-size: 0.85rem;">Short-Form Media</span>
-                    <h2 class="fw-bold mt-1 text-white" style="font-size: 2.25rem; margin-top: 4px;">The Vertical Content</h2>
+                    <span
+                        style="color: #00f2fe; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; font-size: 0.85rem;">Short-Form
+                        Media</span>
+                    <h2 class="fw-bold mt-1 text-white" style="font-size: 2.25rem; margin-top: 4px;">The Vertical
+                        Content</h2>
                 </div>
                 <span class="views-badge"><i class="bi bi-fire"></i> Try My Best.....</span>
             </div>
 
             <div class="reels-grid">
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    <div class="custom-card video-container shadow-lg" style="padding:0;">
-                        <div class="video-overlay"></div>
-                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0" title="VFX Reel 1" allowfullscreen></iframe>
+                    <div class="custom-card video-container shadow-lg"
+                        style="padding:0; position: relative; overflow: hidden;">
+
+                        <video width="100%" height="100%" controls poster="./vlcsnap-2026-06-08-13h05m56s379.png">
+                            <source src="./Podcast 2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-                    <div class="custom-card video-container shadow-lg" style="padding:0;">
-                        <div class="video-overlay"></div>
-                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0" title="VFX Reel 2" allowfullscreen></iframe>
+                    <div class="custom-card video-container shadow-lg"
+                        style="padding:0; position: relative; overflow: hidden;">
+
+                        <video width="100%" height="100%" controls poster="./vlcsnap-2026-06-08-13h08m28s155.png">
+                            <source src="./Podcast 2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                    <div class="custom-card video-container shadow-lg" style="padding:0;">
-                        <div class="video-overlay"></div>
-                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0" title="VFX Reel 3" allowfullscreen></iframe>
+                    <div class="custom-card video-container shadow-lg"
+                        style="padding:0; position: relative; overflow: hidden;">
+
+                        <video width="100%" height="100%" controls poster="./vlcsnap-2026-06-08-13h09m10s320.png">
+                            <source src="./Podcast 2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
                     </div>
                 </div>
             </div>
@@ -933,73 +1264,116 @@ Let’s bring your vision to life.
     <section id="showreel" style="border-top: 1px solid rgba(255, 255, 255, 0.02);">
         <div class="custom-container">
             <div class="text-center mb-5" data-aos="zoom-in" data-aos-duration="1000">
-                <span style="color: #4facfe; text-transform: uppercase; font-weight: 600; letter-spacing: 2px; font-size: 0.85rem;">Long-Form</span>
+                <span
+                    style="color: #4facfe; text-transform: uppercase; font-weight: 600; letter-spacing: 2px; font-size: 0.85rem;">Long-Form</span>
                 <h2 class="fw-bold text-white" style="font-size: 2.25rem; margin-top: 4px;">The Horizontal Contents</h2>
             </div>
 
             <div class="showreel-grid">
-                <div data-aos="fade-right" data-aos-duration="1200">
-                    <div class="showreel-left shadow-lg h-100 custom-card" style="min-height: 380px; padding:0;">
-                        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Official Video Editing Portfolio" allowfullscreen></iframe>
+                <div class="showreel-left shadow-lg h-100 custom-card-video position-relative" id="videoWrapper">
+                    <div class="video-poster" id="videoPoster" onclick="playVideo()"
+                        style="background-image: url('./vlcsnap-2026-06-08-12h55m06s749.png');">
+                        <div class="play-button">&#9658;</div>
                     </div>
+
+                    <iframe id="videoIframe" src="./end.mp4" title="Long Form Video Presentation"
+                        allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div class="showreel-right" data-aos="fade-left" data-aos-duration="1200">
                     <div class="showreel-card shadow-lg custom-card" style="padding:0;">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Commercial Layout">
-                        <div class="showreel-card-caption"><h5 class="fw-bold mb-0">Hyper-X Project Commercial</h5></div>
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80"
+                            alt="Commercial Layout">
+                        <div class="showreel-card-caption">
+                            <h5 class="fw-bold mb-0">Hyper-X Project Commercial</h5>
+                        </div>
                     </div>
                     <div class="showreel-card shadow-lg custom-card" style="padding:0;">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="MiniDoc Layout">
-                        <div class="showreel-card-caption"><h5 class="fw-bold mb-0">Chasing Daylight Documentary</h5></div>
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80"
+                            alt="MiniDoc Layout">
+                        <div class="showreel-card-caption">
+                            <h5 class="fw-bold mb-0">Chasing Daylight Documentary</h5>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" style="background: #05070d; padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.02);">
+    <section id="contact"
+        style="background: #05070d; padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.02);">
         <div class="custom-container">
             <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
-                <span style="color: #00f2fe; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; font-size: 0.8rem;">GET IN TOUCH</span>
-                <h2 class="fw-extrabold text-white mt-1 mb-3" style="font-size: 2.25rem; margin-top: 4px;">Let’s Edit Your Next Reels</h2>
-                <div style="background: rgba(0, 242, 254, 0.03); border: 1px solid rgba(0, 242, 254, 0.1); padding: 8px 16px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; margin-top: 8px;">
+                <span
+                    style="color: #00f2fe; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; font-size: 0.8rem;">GET
+                    IN TOUCH</span>
+                <h2 class="fw-extrabold text-white mt-1 mb-3" style="font-size: 2.25rem; margin-top: 4px;">Let’s Edit
+                    Your Next Reels</h2>
+                <div
+                    style="background: rgba(0, 242, 254, 0.03); border: 1px solid rgba(0, 242, 254, 0.1); padding: 8px 16px; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; margin-top: 8px;">
                     <div class="position-relative" style="width: 8px; height: 8px; position: relative;">
-                        <span class="bg-info" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border-radius: 50%; opacity: 0.5; transform: scale(2.5); animation: pulseGlow 2s infinite ease-in-out;"></span>
-                        <span class="bg-info" style="position: absolute; top:0; left:0; width: 100%; height: 100%; border-radius: 50%;"></span>
+                        <span class="bg-info"
+                            style="position: absolute; top:0; left:0; width: 100%; height: 100%; border-radius: 50%; opacity: 0.5; transform: scale(2.5); animation: pulseGlow 2s infinite ease-in-out;"></span>
+                        <span class="bg-info"
+                            style="position: absolute; top:0; left:0; width: 100%; height: 100%; border-radius: 50%;"></span>
                     </div>
                     <span class="fw-semibold text-white" style="font-size: 0.75rem;">Imporve Your Content </span>
                 </div>
             </div>
 
             <div class="socials-flex-wrapper" data-aos="fade-up" data-aos-duration="1000">
-    
-    <a href="https://www.linkedin.com/feed/?trk=sem-ga_campid.14650114788_asid.150089839322_crid.656569072783_kw.linkedin%20com_d.c_tid.kwd-2246447702_n.g_mt.e_geo.9302676" target="_blank" class="social-link-card" onmouseover="this.style.borderColor='#0a66c2'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.02)'; this.style.transform='translateY(0)';">
-        <div class="social-icon-box" style="background: rgba(10, 102, 194, 0.1); color: #0a66c2;"><i class="bi bi-linkedin"></i></div>
-        <div class="social-meta"><small>LinkedIn</small><h6>Your Name</h6></div>
-    </a>
-    
-    <a href="https://www.instagram.com/dear_sk007?igsh=czh1MDZjdWhkbzdr" target="_blank" class="social-link-card" onmouseover="this.style.borderColor='#e6683c'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.02)'; this.style.transform='translateY(0)';">
-        <div class="social-icon-box" style="background: linear-gradient(45deg, #f09433, #dc2743); color: #fff;"><i class="bi bi-instagram"></i></div>
-        <div class="social-meta"><small>Instagram</small><h6>@your_edit</h6></div>
-    </a>
-    
-    <a href="https://www.youtube.com/@Dearsk_gamer24" target="_blank" class="social-link-card" onmouseover="this.style.borderColor='#ff0000'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.02)'; this.style.transform='translateY(0)';">
-        <div class="social-icon-box" style="background: rgba(255, 0, 0, 0.1); color: #ff0000;"><i class="bi bi-youtube"></i></div>
-        <div class="social-meta"><small>YouTube</small><h6>Channel</h6></div>
-    </a>
-    
-</div>
+
+                <a href="https://www.linkedin.com/feed/?trk=sem-ga_campid.14650114788_asid.150089839322_crid.656569072783_kw.linkedin%20com_d.c_tid.kwd-2246447702_n.g_mt.e_geo.9302676"
+                    target="_blank" class="social-link-card"
+                    onmouseover="this.style.borderColor='#0a66c2'; this.style.transform='translateY(-5px)';"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.02)'; this.style.transform='translateY(0)';">
+                    <div class="social-icon-box" style="background: rgba(10, 102, 194, 0.1); color: #0a66c2;"><i
+                            class="bi bi-linkedin"></i></div>
+                    <div class="social-meta"><small>LinkedIn</small>
+                        <h6>Your Name</h6>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/dear_sk007?igsh=czh1MDZjdWhkbzdr" target="_blank"
+                    class="social-link-card"
+                    onmouseover="this.style.borderColor='#e6683c'; this.style.transform='translateY(-5px)';"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.02)'; this.style.transform='translateY(0)';">
+                    <div class="social-icon-box"
+                        style="background: linear-gradient(45deg, #f09433, #dc2743); color: #fff;"><i
+                            class="bi bi-instagram"></i></div>
+                    <div class="social-meta"><small>Instagram</small>
+                        <h6>@your_edit</h6>
+                    </div>
+                </a>
+
+                <a href="https://www.youtube.com/@Dearsk_gamer24" target="_blank" class="social-link-card"
+                    onmouseover="this.style.borderColor='#ff0000'; this.style.transform='translateY(-5px)';"
+                    onmouseout="this.style.borderColor='rgba(255,255,255,0.02)'; this.style.transform='translateY(0)';">
+                    <div class="social-icon-box" style="background: rgba(255, 0, 0, 0.1); color: #ff0000;"><i
+                            class="bi bi-youtube"></i></div>
+                    <div class="social-meta"><small>YouTube</small>
+                        <h6>Channel</h6>
+                    </div>
+                </a>
+
+            </div>
 
             <!-- Form Wrapper -->
             <div class="form-centered-wrapper" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
                 <div class="custom-card">
                     <form id="contactForm">
                         <div class="form-row">
-                            <div><label class="form-label">Name</label><input type="text" id="formName" class="form-glass" placeholder="Alex" required></div>
-                            <div><label class="form-label">Email</label><input type="email" id="formEmail" class="form-glass" placeholder="name@company.com" required></div>
+                            <div><label class="form-label">Name</label><input type="text" id="formName"
+                                    class="form-glass" placeholder="Alex" required></div>
+                            <div><label class="form-label">Email</label><input type="email" id="formEmail"
+                                    class="form-glass" placeholder="name@company.com" required></div>
                         </div>
-                        <div class="form-group-full"><label class="form-label">Project Timeline Scope</label><textarea id="formMessage" class="form-glass" rows="4" placeholder="Detail your project pacing, visual effects needs..." required></textarea></div>
-                        <div class="form-group-full button-margin"><button type="submit" id="submitBtn" class="btn btn-gradient w-100" style="text-transform: uppercase;">Compile & Send Data Stream</button></div>
+                        <div class="form-group-full"><label class="form-label">Project Timeline Scope</label><textarea
+                                id="formMessage" class="form-glass" rows="4"
+                                placeholder="Detail your project pacing, visual effects needs..." required></textarea>
+                        </div>
+                        <div class="form-group-full button-margin"><button type="submit" id="submitBtn"
+                                class="btn btn-gradient w-100" style="text-transform: uppercase;">Compile & Send Data
+                                Stream</button></div>
                     </form>
                 </div>
             </div>
@@ -1063,6 +1437,32 @@ Let’s bring your vision to life.
                 });
             });
         });
+        function playVideo() {
+            var poster = document.getElementById('videoPoster');
+            var iframe = document.getElementById('videoIframe');
+
+            // 1. Hide the poster completely
+            poster.style.opacity = '0';
+            poster.style.visibility = 'hidden';
+            poster.style.pointerEvents = 'none'; // Prevents further accidental clicks
+
+            // 2. Play the video by updating the source with autoplay
+            var currentSrc = iframe.src;
+            if (currentSrc.indexOf('?autoplay=1') === -1) {
+                // Checks if parameters already exist
+                if (currentSrc.indexOf('?') !== -1) {
+                    iframe.src = currentSrc + "&autoplay=1&muted=1";
+                } else {
+                    iframe.src = currentSrc + "?autoplay=1&muted=1";
+                }
+            }
+        }
+
     </script>
 </body>
+<<<<<<< HEAD:index.html
 </html>
+=======
+
+</html>
+>>>>>>> 3320c83 (Add New):EDIT.html
